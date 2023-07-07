@@ -6,9 +6,10 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-
+const menu = document.querySelector("#ingredients")
 const itemArr = ingredients.map((ingredient) => {
-  return `<li>${ingredient}</li>`
+  const elem = document.createElement("li")
+  elem.classList.add("item")
+  elem.textContent = ingredient;
+  menu.append(elem)
 })
-const listElements = `<ul>${itemArr.join('')}</ul>`;
-document.body.insertAdjacentHTML("beforeend", listElements)
